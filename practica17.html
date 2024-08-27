@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="1000px" height="1000px"></canvas>
+    <script type="text/javascript">
+        var adelanto = 10;
+        var retroceso = 10;
+
+        //keys 
+        document.addEventListener("keydown", (event) => {
+            
+            console.log(event.key)
+            ctx.fillStyle = "white";
+            ctx.fillRect(0, 0, 600, 500);
+            ctx.fillStyle = "green";
+            ctx.fillRect(adelanto, retroceso, 50, 50)
+            switch (event.key) {
+                //arriba
+                case "w" || "W":
+                    if (retroceso >= 0) {
+                        retroceso -= 5
+                    }
+                    break;
+                //abajo 
+                case "s" || "S":
+                    if (retroceso >= 0) {
+                        retroceso += 5
+                    }
+                    break;
+                //izquierda
+                case "a" || "A":
+                    if (adelanto >= 0) {
+                        adelanto -= 5
+                    }
+                    break;
+                //derecha
+                case "d" || "D":
+                    if (adelanto >= 0) {
+                        adelanto += 5
+                    }
+                    break;
+
+
+
+            }
+        });;
+
+
+
+    </script>
+
+    <style type="text/css">
+        body {
+            background-color: rgb(247, 247, 247);
+        }
+    </style>
+</body>
+
+</html>
